@@ -209,12 +209,9 @@ func Unpack4NA(data []byte, length int) string {
 // Compress2NA - given a string of IUPAC nucleic acid sequence, return a byte array of 2-bit encoded sequence.
 func Compress2NA(data string) ([]byte, int, *stack.ErrorT) {
 	base := []byte{0, 0, 0, 0}
-
 	max := len(data)
-
 	var arry []byte
 	var ok bool
-
 	for i, j := 0, 0; i < max; i = j {
 		j += 4
 		if j > max {
@@ -233,27 +230,21 @@ func Compress2NA(data string) ([]byte, int, *stack.ErrorT) {
 			base[k] = 'A'
 			k++
 		}
-
 		b, ok := iupacnaToNcbi2na[string(base)]
 		if !ok {
 			return nil, 0, stack.ErrorF("failed to find %s in iupacnaToNcbi2na map", string(base))
 		}
 		arry = append(arry, b)
 	}
-
 	return arry, max, nil
 }
 
 // Compress4NA - given a string of IUPAC nucleic acid sequence, return a byte array of 4-bit encoded sequence.
 func Compress4NA(data string) ([]byte, int, *stack.ErrorT) {
-
 	base := []byte{0, 0}
-
 	max := len(data)
-
 	var arry []byte
 	var ok bool
-
 	for i, j := 0, 0; i < max; i = j {
 		j += 2
 		if j > max {
@@ -272,30 +263,24 @@ func Compress4NA(data string) ([]byte, int, *stack.ErrorT) {
 			base[k] = 'X'
 			k++
 		}
-
 		b, ok := iupacnaToNcbi4na[string(base)]
 		if !ok {
 			return nil, 0, stack.ErrorF("failed to find %s in iupacnaToNcbi4na map", string(base))
 		}
 		arry = append(arry, b)
 	}
-
 	return arry, max, nil
 }
 
 
 // RevCompIUPAC - given a string of IUPAC nucleic acid sequence, return a string of the reverse complement.
 func RevCompIUPAC(seq string) (string, *stack.ErrorT) {
-
 	runes := []rune(seq)
-
 	// reverse sequence letters - middle base in odd-length sequence is not touched, so cannot also complement here
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
-
 	var ok bool
-
 	// now complement every base, also upper-casing and handling uracil
 	for i, ch := range runes {
 		runes[i], ok = revComp[ch]
@@ -303,6 +288,5 @@ func RevCompIUPAC(seq string) (string, *stack.ErrorT) {
 			return "", stack.ErrorF("failed to find '%v' in revComp map", ch)
 		}
 	}
-
 	return string(runes), nil
 }
