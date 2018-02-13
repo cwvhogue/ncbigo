@@ -9,6 +9,6 @@ WIP - Towards a Go (Golang) Asn.1 compiler and toolkit.
 	- Support telecommunications Asn.1 data and specifications where possible.
 	
 ### Contributors
-Christopher Hogue (Ericsson)
-Johnathan Kans (NCBI)
-Andrew Hume (Ericsson)
+	Christopher Hogue (Ericsson)
+	Johnathan Kans (NCBI)
+	Andrew Hume (Ericsson)
