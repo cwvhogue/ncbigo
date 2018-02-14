@@ -28,7 +28,7 @@ Nothing much to see here yet... Just getting repo organized and adding simple pr
 	
 ### Contributors
 	Christopher Hogue (Ericsson)
-	Johnathan Kans (NCBI)
+	Jonathan Kans (NCBI)
 	Andrew Hume (Ericsson)
 
 

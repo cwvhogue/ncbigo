@@ -48,6 +48,12 @@ var ncbi4naToIupacna [256]string
 var iupacnaToNcbi2na = make(map[string]byte)
 var iupacnaToNcbi4na = make(map[string]byte)
 
+// init - intialize all
+func init() {
+	init2na()
+	init4na()
+}
+
 // init2na - initialize the 2NA converter.
 func init2na() {
 	letters := "ACGT"

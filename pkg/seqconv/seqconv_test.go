@@ -33,9 +33,6 @@ func (s *SeqConvTesterT) TearDownSuite(c *C) {
 
 func (s *SeqConvTesterT) TestSeqConv(c *C) {
 
-	init2na()
-	init4na()
-
 	fmt.Printf("Table: ncbi2naToIupacna\n")
 	for j := 0; j < 256; j++ {
 		fmt.Printf("%3d %s\n", j, ncbi2naToIupacna[j])
