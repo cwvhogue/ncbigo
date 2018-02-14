@@ -15,6 +15,12 @@ WIP - Towards a Go (Golang) Asn.1 compiler and toolkit.
 	Andrew Hume (Ericsson)
 
 
+### Go environment requirements
+
+	Install go
+	Install golint from https://github.com/golang/lint
+	Ensure golint is in your PATH
+
 ### Get & make
 
 	go get github.com/cwvhogue/ncbigo
